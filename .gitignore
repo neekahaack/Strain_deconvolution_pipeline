@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Data & results (do NOT version)
+data/
+results/
+plots/
+
+# Large sequencing / bioinformatics files
+*.fastq
+*.fq
+*.fastq.gz
+*.fq.gz
+*.sam
+*.bam
+*.bai
+
+# Databases / indexes
+*.bt2
+*.bt2l
+db_*/
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+*.out
+*.err
+

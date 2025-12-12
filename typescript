@@ -1,0 +1,365 @@
+Script started on 2025-11-24 17:47:55+01:00
+
+======================
+Current cluster status
+======================
+
+CPUs are 121.21% allocated and 23.22% used: 10589 out of 8736 active cores are allocated by jobs (out of 18306 available)
+RAM is 88.68% allocated and 18.01% used: 29778 GB out of 33577 GB is allocated but only 6050 GB of memory is used by jobs.
+Current power draw: 65505 watts; Electricity grid status: [1;31mfeeding on non-renewable sources [0m
+Queue          Threads  Running Jobs  Pending Jobs  Estimated next job start
+ib:            9856     0             0             
+htc-el8:       22272    706           0             
+gpu-el8:       7392     66            10            now
+gpu-training:  1152     0             0             
+bigmem:        9088     20            0             
+test:          1792     0             0             
+
+
+
+Features by which you can select nodes in heterogeneous partitions:
+htc-el8: avx512 bergamo genoa genoaX milan milanX net25g net25G znver3 znver3x znver4c znver4x 
+gpu-el8: avx512 cascadelake datacenter gaming genoa gpu=3090 gpu=A100 gpu=A40 gpu=H100 gpu=L40s gpu=V100 milan net100G net25G rome znver2 znver3 znver4 
+gpu-training: genoa gpu=H100 gpu=H200 hgx net100G sapphirerapids znver4 
+test: avx512 bergamo gaming genoa gpu=3090 milan naples net100G net25G rome znver1 znver2 znver3 znver4c 
+
+To get this info anytime (refreshed every minute), just run /etc/profile.d/clusterstatus.sh
+
+
+Remember to follow [32mEMBL Internal Policy 71[0m and cite usage of EMBL IT Services HPC resources (https://doi.org/10.5281/zenodo.12785829) in your papers. Thanks.
+
+Run "module avail" to see what software is available and "module spider" to search for specific software.
+If you don't find what you need, open an issue at [34mhttps://git.embl.de/grp-software/eb_build/-/issues/new[0m and we'll try to make it available.
+
+For more information on how to make best use of HPC resources, please have a look at https://wiki.embl.de/cluster/
+
+
+You have 0 running and 0 pending jobs.
+
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model[haack@login2 Model]$ ^C
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model[haack@login2 Model]$ cd scripts/
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ bash run_assemblies.sh [K
+Ensuring assembled_genomes directory exists...
+Creating sample_list.txt ...
+Found 736 samples.
+Making log directory ...
+Submitting SPAdes job array ...
+sbatch: error: Unable to open file ../spades_array.sh
+Submitted as job ID: 
+Waiting for SPAdes array to finish ...
+^C
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ ba[K[Kbash run_assemblies.sh
+Ensuring assembled_genomes directory exists...
+Creating sample_list.txt ...
+Found 736 samples.
+Making log directory ...
+Submitting SPAdes job array ...
+Submitted as job ID: 44430885
+Waiting for SPAdes array to finish ...
+All SPAdes jobs finished.
+Building metadata file ...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'pandas'
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ ls /g/typas/Personal_Folders/Neeka/Model/data/10_whole_pipeline/ERP105624/logs
+ls: cannot access '/g/typas/Personal_Folders/Neeka/Model/data/10_whole_pipeline/ERP105624/logs': No such file or directory
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ cd [K[K[Kls /g/typas/Personal_Folders/Neeka/Model/data/10_whole_pipeline/ERP105624/logsrlogsalogswlogs_logsrlogselogsalogsdlogsslogs/logs
+spades_44430885_100.err  spades_44430885_233.out  spades_44430885_367.err  spades_44430885_49.out   spades_44430885_632.err
+spades_44430885_100.out  spades_44430885_234.err  spades_44430885_367.out  spades_44430885_4.err    spades_44430885_632.out
+spades_44430885_101.err  spades_44430885_234.out  spades_44430885_368.err  spades_44430885_4.out    spades_44430885_633.err
+spades_44430885_101.out  spades_44430885_235.err  spades_44430885_368.out  spades_44430885_500.err  spades_44430885_633.out
+spades_44430885_102.err  spades_44430885_235.out  spades_44430885_369.err  spades_44430885_500.out  spades_44430885_634.err
+spades_44430885_102.out  spades_44430885_236.err  spades_44430885_369.out  spades_44430885_501.err  spades_44430885_634.out
+spades_44430885_103.err  spades_44430885_236.out  spades_44430885_36.err   spades_44430885_501.out  spades_44430885_635.err
+spades_44430885_103.out  spades_44430885_237.err  spades_44430885_36.out   spades_44430885_502.err  spades_44430885_635.out
+spades_44430885_104.err  spades_44430885_237.out  spades_44430885_370.err  spades_44430885_502.out  spades_44430885_636.err
+spades_44430885_104.out  spades_44430885_238.err  spades_44430885_370.out  spades_44430885_503.err  spades_44430885_636.out
+spades_44430885_105.err  spades_44430885_238.out  spades_44430885_371.err  spades_44430885_503.out  spades_44430885_637.err
+spades_44430885_105.out  spades_44430885_239.err  spades_44430885_371.out  spades_44430885_504.err  spades_44430885_637.out
+spades_44430885_106.err  spades_44430885_239.out  spades_44430885_372.err  spades_44430885_504.out  spades_44430885_638.err
+spades_44430885_106.out  spades_44430885_23.err   spades_44430885_372.out  spades_44430885_505.err  spades_44430885_638.out
+spades_44430885_107.err  spades_44430885_23.out   spades_44430885_373.err  spades_44430885_505.out  spades_44430885_639.err
+spades_44430885_107.out  spades_44430885_240.err  spades_44430885_373.out  spades_44430885_506.err  spades_44430885_639.out
+spades_44430885_108.err  spades_44430885_240.out  spades_44430885_374.err  spades_44430885_506.out  spades_44430885_63.err
+spades_44430885_108.out  spades_44430885_241.err  spades_44430885_374.out  spades_44430885_507.err  spades_44430885_63.out
+spades_44430885_109.err  spades_44430885_241.out  spades_44430885_375.err  spades_44430885_507.out  spades_44430885_640.err
+spades_44430885_109.out  spades_44430885_242.err  spades_44430885_375.out  spades_44430885_508.err  spades_44430885_640.out
+spades_44430885_10.err   spades_44430885_242.out  spades_44430885_376.err  spades_44430885_508.out  spades_44430885_641.err
+spades_44430885_10.out   spades_44430885_243.err  spades_44430885_376.out  spades_44430885_509.err  spades_44430885_641.out
+spades_44430885_110.err  spades_44430885_243.out  spades_44430885_377.err  spades_44430885_509.out  spades_44430885_642.err
+spades_44430885_110.out  spades_44430885_244.err  spades_44430885_377.out  spades_44430885_50.err   spades_44430885_642.out
+spades_44430885_111.err  spades_44430885_244.out  spades_44430885_378.err  spades_44430885_50.out   spades_44430885_643.err
+spades_44430885_111.out  spades_44430885_245.err  spades_44430885_378.out  spades_44430885_510.err  spades_44430885_643.out
+spades_44430885_112.err  spades_44430885_245.out  spades_44430885_379.err  spades_44430885_510.out  spades_44430885_644.err
+spades_44430885_112.out  spades_44430885_246.err  spades_44430885_379.out  spades_44430885_511.err  spades_44430885_644.out
+spades_44430885_113.err  spades_44430885_246.out  spades_44430885_37.err   spades_44430885_511.out  spades_44430885_645.err
+spades_44430885_113.out  spades_44430885_247.err  spades_44430885_37.out   spades_44430885_512.err  spades_44430885_645.out
+spades_44430885_114.err  spades_44430885_247.out  spades_44430885_380.err  spades_44430885_512.out  spades_44430885_646.err
+spades_44430885_114.out  spades_44430885_248.err  spades_44430885_380.out  spades_44430885_513.err  spades_44430885_646.out
+spades_44430885_115.err  spades_44430885_248.out  spades_44430885_381.err  spades_44430885_513.out  spades_44430885_647.err
+spades_44430885_115.out  spades_44430885_249.err  spades_44430885_381.out  spades_44430885_514.err  spades_44430885_647.out
+spades_44430885_116.err  spades_44430885_249.out  spades_44430885_382.err  spades_44430885_514.out  spades_44430885_648.err
+spades_44430885_116.out  spades_44430885_24.err   spades_44430885_382.out  spades_44430885_515.err  spades_44430885_648.out
+spades_44430885_117.err  spades_44430885_24.out   spades_44430885_383.err  spades_44430885_515.out  spades_44430885_649.err
+spades_44430885_117.out  spades_44430885_250.err  spades_44430885_383.out  spades_44430885_516.err  spades_44430885_649.out
+spades_44430885_118.err  spades_44430885_250.out  spades_44430885_384.err  spades_44430885_516.out  spades_44430885_64.err
+spades_44430885_118.out  spades_44430885_251.err  spades_44430885_384.out  spades_44430885_517.err  spades_44430885_64.out
+spades_44430885_119.err  spades_44430885_251.out  spades_44430885_385.err  spades_44430885_517.out  spades_44430885_650.err
+spades_44430885_119.out  spades_44430885_252.err  spades_44430885_385.out  spades_44430885_518.err  spades_44430885_650.out
+spades_44430885_11.err   spades_44430885_252.out  spades_44430885_386.err  spades_44430885_518.out  spades_44430885_651.err
+spades_44430885_11.out   spades_44430885_253.err  spades_44430885_386.out  spades_44430885_519.err  spades_44430885_651.out
+spades_44430885_120.err  spades_44430885_253.out  spades_44430885_387.err  spades_44430885_519.out  spades_44430885_652.err
+spades_44430885_120.out  spades_44430885_254.err  spades_44430885_387.out  spades_44430885_51.err   spades_44430885_652.out
+spades_44430885_121.err  spades_44430885_254.out  spades_44430885_388.err  spades_44430885_51.out   spades_44430885_653.err
+spades_44430885_121.out  spades_44430885_255.err  spades_44430885_388.out  spades_44430885_520.err  spades_44430885_653.out
+spades_44430885_122.err  spades_44430885_255.out  spades_44430885_389.err  spades_44430885_520.out  spades_44430885_654.err
+spades_44430885_122.out  spades_44430885_256.err  spades_44430885_389.out  spades_44430885_521.err  spades_44430885_654.out
+spades_44430885_123.err  spades_44430885_256.out  spades_44430885_38.err   spades_44430885_521.out  spades_44430885_655.err
+spades_44430885_123.out  spades_44430885_257.err  spades_44430885_38.out   spades_44430885_522.err  spades_44430885_655.out
+spades_44430885_124.err  spades_44430885_257.out  spades_44430885_390.err  spades_44430885_522.out  spades_44430885_656.err
+spades_44430885_124.out  spades_44430885_258.err  spades_44430885_390.out  spades_44430885_523.err  spades_44430885_656.out
+spades_44430885_125.err  spades_44430885_258.out  spades_44430885_391.err  spades_44430885_523.out  spades_44430885_657.err
+spades_44430885_125.out  spades_44430885_259.err  spades_44430885_391.out  spades_44430885_524.err  spades_44430885_657.out
+spades_44430885_126.err  spades_44430885_259.out  spades_44430885_392.err  spades_44430885_524.out  spades_44430885_658.err
+spades_44430885_126.out  spades_44430885_25.err   spades_44430885_392.out  spades_44430885_525.err  spades_44430885_658.out
+spades_44430885_127.err  spades_44430885_25.out   spades_44430885_393.err  spades_44430885_525.out  spades_44430885_659.err
+spades_44430885_127.out  spades_44430885_260.err  spades_44430885_393.out  spades_44430885_526.err  spades_44430885_659.out
+spades_44430885_128.err  spades_44430885_260.out  spades_44430885_394.err  spades_44430885_526.out  spades_44430885_65.err
+spades_44430885_128.out  spades_44430885_261.err  spades_44430885_394.out  spades_44430885_527.err  spades_44430885_65.out
+spades_44430885_129.err  spades_44430885_261.out  spades_44430885_395.err  spades_44430885_527.out  spades_44430885_660.err
+spades_44430885_129.out  spades_44430885_262.err  spades_44430885_395.out  spades_44430885_528.err  spades_44430885_660.out
+spades_44430885_12.err   spades_44430885_262.out  spades_44430885_396.err  spades_44430885_528.out  spades_44430885_661.err
+spades_44430885_12.out   spades_44430885_263.err  spades_44430885_396.out  spades_44430885_529.err  spades_44430885_661.out
+spades_44430885_130.err  spades_44430885_263.out  spades_44430885_397.err  spades_44430885_529.out  spades_44430885_662.err
+spades_44430885_130.out  spades_44430885_264.err  spades_44430885_397.out  spades_44430885_52.err   spades_44430885_662.out
+spades_44430885_131.err  spades_44430885_264.out  spades_44430885_398.err  spades_44430885_52.out   spades_44430885_663.err
+spades_44430885_131.out  spades_44430885_265.err  spades_44430885_398.out  spades_44430885_530.err  spades_44430885_663.out
+spades_44430885_132.err  spades_44430885_265.out  spades_44430885_399.err  spades_44430885_530.out  spades_44430885_664.err
+spades_44430885_132.out  spades_44430885_266.err  spades_44430885_399.out  spades_44430885_531.err  spades_44430885_664.out
+spades_44430885_133.err  spades_44430885_266.out  spades_44430885_39.err   spades_44430885_531.out  spades_44430885_665.err
+spades_44430885_133.out  spades_44430885_267.err  spades_44430885_39.out   spades_44430885_532.err  spades_44430885_665.out
+spades_44430885_134.err  spades_44430885_267.out  spades_44430885_3.err    spades_44430885_532.out  spades_44430885_666.err
+spades_44430885_134.out  spades_44430885_268.err  spades_44430885_3.out    spades_44430885_533.err  spades_44430885_666.out
+spades_44430885_135.err  spades_44430885_268.out  spades_44430885_400.err  spades_44430885_533.out  spades_44430885_667.err
+spades_44430885_135.out  spades_44430885_269.err  spades_44430885_400.out  spades_44430885_534.err  spades_44430885_667.out
+spades_44430885_136.err  spades_44430885_269.out  spades_44430885_401.err  spades_44430885_534.out  spades_44430885_668.err
+spades_44430885_136.out  spades_44430885_26.err   spades_44430885_401.out  spades_44430885_535.err  spades_44430885_668.out
+spades_44430885_137.err  spades_44430885_26.out   spades_44430885_402.err  spades_44430885_535.out  spades_44430885_669.err
+spades_44430885_137.out  spades_44430885_270.err  spades_44430885_402.out  spades_44430885_536.err  spades_44430885_669.out
+spades_44430885_138.err  spades_44430885_270.out  spades_44430885_403.err  spades_44430885_536.out  spades_44430885_66.err
+spades_44430885_138.out  spades_44430885_271.err  spades_44430885_403.out  spades_44430885_537.err  spades_44430885_66.out
+spades_44430885_139.err  spades_44430885_271.out  spades_44430885_404.err  spades_44430885_537.out  spades_44430885_670.err
+spades_44430885_139.out  spades_44430885_272.err  spades_44430885_404.out  spades_44430885_538.err  spades_44430885_670.out
+spades_44430885_13.err   spades_44430885_272.out  spades_44430885_405.err  spades_44430885_538.out  spades_44430885_671.err
+spades_44430885_13.out   spades_44430885_273.err  spades_44430885_405.out  spades_44430885_539.err  spades_44430885_671.out
+spades_44430885_140.err  spades_44430885_273.out  spades_44430885_406.err  spades_44430885_539.out  spades_44430885_672.err
+spades_44430885_140.out  spades_44430885_274.err  spades_44430885_406.out  spades_44430885_53.err   spades_44430885_672.out
+spades_44430885_141.err  spades_44430885_274.out  spades_44430885_407.err  spades_44430885_53.out   spades_44430885_673.err
+spades_44430885_141.out  spades_44430885_275.err  spades_44430885_407.out  spades_44430885_540.err  spades_44430885_673.out
+spades_44430885_142.err  spades_44430885_275.out  spades_44430885_408.err  spades_44430885_540.out  spades_44430885_674.err
+spades_44430885_142.out  spades_44430885_276.err  spades_44430885_408.out  spades_44430885_541.err  spades_44430885_674.out
+spades_44430885_143.err  spades_44430885_276.out  spades_44430885_409.err  spades_44430885_541.out  spades_44430885_675.err
+spades_44430885_143.out  spades_44430885_277.err  spades_44430885_409.out  spades_44430885_542.err  spades_44430885_675.out
+spades_44430885_144.err  spades_44430885_277.out  spades_44430885_40.err   spades_44430885_542.out  spades_44430885_676.err
+spades_44430885_144.out  spades_44430885_278.err  spades_44430885_40.out   spades_44430885_543.err  spades_44430885_676.out
+spades_44430885_145.err  spades_44430885_278.out  spades_44430885_410.err  spades_44430885_543.out  spades_44430885_677.err
+spades_44430885_145.out  spades_44430885_279.err  spades_44430885_410.out  spades_44430885_544.err  spades_44430885_677.out
+spades_44430885_146.err  spades_44430885_279.out  spades_44430885_411.err  spades_44430885_544.out  spades_44430885_678.err
+spades_44430885_146.out  spades_44430885_27.err   spades_44430885_411.out  spades_44430885_545.err  spades_44430885_678.out
+spades_44430885_147.err  spades_44430885_27.out   spades_44430885_412.err  spades_44430885_545.out  spades_44430885_679.err
+spades_44430885_147.out  spades_44430885_280.err  spades_44430885_412.out  spades_44430885_546.err  spades_44430885_679.out
+spades_44430885_148.err  spades_44430885_280.out  spades_44430885_413.err  spades_44430885_546.out  spades_44430885_67.err
+spades_44430885_148.out  spades_44430885_281.err  spades_44430885_413.out  spades_44430885_547.err  spades_44430885_67.out
+spades_44430885_149.err  spades_44430885_281.out  spades_44430885_414.err  spades_44430885_547.out  spades_44430885_680.err
+spades_44430885_149.out  spades_44430885_282.err  spades_44430885_414.out  spades_44430885_548.err  spades_44430885_680.out
+spades_44430885_14.err   spades_44430885_282.out  spades_44430885_415.err  spades_44430885_548.out  spades_44430885_681.err
+spades_44430885_14.out   spades_44430885_283.err  spades_44430885_415.out  spades_44430885_549.err  spades_44430885_681.out
+spades_44430885_150.err  spades_44430885_283.out  spades_44430885_416.err  spades_44430885_549.out  spades_44430885_682.err
+spades_44430885_150.out  spades_44430885_284.err  spades_44430885_416.out  spades_44430885_54.err   spades_44430885_682.out
+spades_44430885_151.err  spades_44430885_284.out  spades_44430885_417.err  spades_44430885_54.out   spades_44430885_683.err
+spades_44430885_151.out  spades_44430885_285.err  spades_44430885_417.out  spades_44430885_550.err  spades_44430885_683.out
+spades_44430885_152.err  spades_44430885_285.out  spades_44430885_418.err  spades_44430885_550.out  spades_44430885_684.err
+spades_44430885_152.out  spades_44430885_286.err  spades_44430885_418.out  spades_44430885_551.err  spades_44430885_684.out
+spades_44430885_153.err  spades_44430885_286.out  spades_44430885_419.err  spades_44430885_551.out  spades_44430885_685.err
+spades_44430885_153.out  spades_44430885_287.err  spades_44430885_419.out  spades_44430885_552.err  spades_44430885_685.out
+spades_44430885_154.err  spades_44430885_287.out  spades_44430885_41.err   spades_44430885_552.out  spades_44430885_686.err
+spades_44430885_154.out  spades_44430885_288.err  spades_44430885_41.out   spades_44430885_553.err  spades_44430885_686.out
+spades_44430885_155.err  spades_44430885_288.out  spades_44430885_420.err  spades_44430885_553.out  spades_44430885_687.err
+spades_44430885_155.out  spades_44430885_289.err  spades_44430885_420.out  spades_44430885_554.err  spades_44430885_687.out
+spades_44430885_156.err  spades_44430885_289.out  spades_44430885_421.err  spades_44430885_554.out  spades_44430885_688.err
+spades_44430885_156.out  spades_44430885_28.err   spades_44430885_421.out  spades_44430885_555.err  spades_44430885_688.out
+spades_44430885_157.err  spades_44430885_28.out   spades_44430885_422.err  spades_44430885_555.out  spades_44430885_689.err
+spades_44430885_157.out  spades_44430885_290.err  spades_44430885_422.out  spades_44430885_556.err  spades_44430885_689.out
+spades_44430885_158.err  spades_44430885_290.out  spades_44430885_423.err  spades_44430885_556.out  spades_44430885_68.err
+spades_44430885_158.out  spades_44430885_291.err  spades_44430885_423.out  spades_44430885_557.err  spades_44430885_68.out
+spades_44430885_159.err  spades_44430885_291.out  spades_44430885_424.err  spades_44430885_557.out  spades_44430885_690.err
+spades_44430885_159.out  spades_44430885_292.err  spades_44430885_424.out  spades_44430885_558.err  spades_44430885_690.out
+spades_44430885_15.err   spades_44430885_292.out  spades_44430885_425.err  spades_44430885_558.out  spades_44430885_691.err
+spades_44430885_15.out   spades_44430885_293.err  spades_44430885_425.out  spades_44430885_559.err  spades_44430885_691.out
+spades_44430885_160.err  spades_44430885_293.out  spades_44430885_426.err  spades_44430885_559.out  spades_44430885_692.err
+spades_44430885_160.out  spades_44430885_294.err  spades_44430885_426.out  spades_44430885_55.err   spades_44430885_692.out
+spades_44430885_161.err  spades_44430885_294.out  spades_44430885_427.err  spades_44430885_55.out   spades_44430885_693.err
+spades_44430885_161.out  spades_44430885_295.err  spades_44430885_427.out  spades_44430885_560.err  spades_44430885_693.out
+spades_44430885_162.err  spades_44430885_295.out  spades_44430885_428.err  spades_44430885_560.out  spades_44430885_694.err
+spades_44430885_162.out  spades_44430885_296.err  spades_44430885_428.out  spades_44430885_561.err  spades_44430885_694.out
+spades_44430885_163.err  spades_44430885_296.out  spades_44430885_429.err  spades_44430885_561.out  spades_44430885_695.err
+spades_44430885_163.out  spades_44430885_297.err  spades_44430885_429.out  spades_44430885_562.err  spades_44430885_695.out
+spades_44430885_164.err  spades_44430885_297.out  spades_44430885_42.err   spades_44430885_562.out  spades_44430885_696.err
+spades_44430885_164.out  spades_44430885_298.err  spades_44430885_42.out   spades_44430885_563.err  spades_44430885_696.out
+spades_44430885_165.err  spades_44430885_298.out  spades_44430885_430.err  spades_44430885_563.out  spades_44430885_697.err
+spades_44430885_165.out  spades_44430885_299.err  spades_44430885_430.out  spades_44430885_564.err  spades_44430885_697.out
+spades_44430885_166.err  spades_44430885_299.out  spades_44430885_431.err  spades_44430885_564.out  spades_44430885_698.err
+spades_44430885_166.out  spades_44430885_29.err   spades_44430885_431.out  spades_44430885_565.err  spades_44430885_698.out
+spades_44430885_167.err  spades_44430885_29.out   spades_44430885_432.err  spades_44430885_565.out  spades_44430885_699.err
+spades_44430885_167.out  spades_44430885_2.err    spades_44430885_432.out  spades_44430885_566.err  spades_44430885_699.out
+spades_44430885_168.err  spades_44430885_2.out    spades_44430885_433.err  spades_44430885_566.out  spades_44430885_69.err
+spades_44430885_168.out  spades_44430885_300.err  spades_44430885_433.out  spades_44430885_567.err  spades_44430885_69.out
+spades_44430885_169.err  spades_44430885_300.out  spades_44430885_434.err  spades_44430885_567.out  spades_44430885_6.err
+spades_44430885_169.out  spades_44430885_301.err  spades_44430885_434.out  spades_44430885_568.err  spades_44430885_6.out
+spades_44430885_16.err   spades_44430885_301.out  spades_44430885_435.err  spades_44430885_568.out  spades_44430885_700.err
+spades_44430885_16.out   spades_44430885_302.err  spades_44430885_435.out  spades_44430885_569.err  spades_44430885_700.out
+spades_44430885_170.err  spades_44430885_302.out  spades_44430885_436.err  spades_44430885_569.out  spades_44430885_701.err
+spades_44430885_170.out  spades_44430885_303.err  spades_44430885_436.out  spades_44430885_56.err   spades_44430885_701.out
+spades_44430885_171.err  spades_44430885_303.out  spades_44430885_437.err  spades_44430885_56.out   spades_44430885_702.err
+spades_44430885_171.out  spades_44430885_304.err  spades_44430885_437.out  spades_44430885_570.err  spades_44430885_702.out
+spades_44430885_172.err  spades_44430885_304.out  spades_44430885_438.err  spades_44430885_570.out  spades_44430885_703.err
+spades_44430885_172.out  spades_44430885_305.err  spades_44430885_438.out  spades_44430885_571.err  spades_44430885_703.out
+spades_44430885_173.err  spades_44430885_305.out  spades_44430885_439.err  spades_44430885_571.out  spades_44430885_704.err
+spades_44430885_173.out  spades_44430885_306.err  spades_44430885_439.out  spades_44430885_572.err  spades_44430885_704.out
+spades_44430885_174.err  spades_44430885_306.out  spades_44430885_43.err   spades_44430885_572.out  spades_44430885_705.err
+spades_44430885_174.out  spades_44430885_307.err  spades_44430885_43.out   spades_44430885_573.err  spades_44430885_705.out
+spades_44430885_175.err  spades_44430885_307.out  spades_44430885_440.err  spades_44430885_573.out  spades_44430885_706.err
+spades_44430885_175.out  spades_44430885_308.err  spades_44430885_440.out  spades_44430885_574.err  spades_44430885_706.out
+spades_44430885_176.err  spades_44430885_308.out  spades_44430885_441.err  spades_44430885_574.out  spades_44430885_707.err
+spades_44430885_176.out  spades_44430885_309.err  spades_44430885_441.out  spades_44430885_575.err  spades_44430885_707.out
+spades_44430885_177.err  spades_44430885_309.out  spades_44430885_442.err  spades_44430885_575.out  spades_44430885_708.err
+spades_44430885_177.out  spades_44430885_30.err   spades_44430885_442.out  spades_44430885_576.err  spades_44430885_708.out
+spades_44430885_178.err  spades_44430885_30.out   spades_44430885_443.err  spades_44430885_576.out  spades_44430885_709.err
+spades_44430885_178.out  spades_44430885_310.err  spades_44430885_443.out  spades_44430885_577.err  spades_44430885_709.out
+spades_44430885_179.err  spades_44430885_310.out  spades_44430885_444.err  spades_44430885_577.out  spades_44430885_70.err
+spades_44430885_179.out  spades_44430885_311.err  spades_44430885_444.out  spades_44430885_578.err  spades_44430885_70.out
+spades_44430885_17.err   spades_44430885_311.out  spades_44430885_445.err  spades_44430885_578.out  spades_44430885_710.err
+spades_44430885_17.out   spades_44430885_312.err  spades_44430885_445.out  spades_44430885_579.err  spades_44430885_710.out
+spades_44430885_180.err  spades_44430885_312.out  spades_44430885_446.err  spades_44430885_579.out  spades_44430885_711.err
+spades_44430885_180.out  spades_44430885_313.err  spades_44430885_446.out  spades_44430885_57.err   spades_44430885_711.out
+spades_44430885_181.err  spades_44430885_313.out  spades_44430885_447.err  spades_44430885_57.out   spades_44430885_712.err
+spades_44430885_181.out  spades_44430885_314.err  spades_44430885_447.out  spades_44430885_580.err  spades_44430885_712.out
+spades_44430885_182.err  spades_44430885_314.out  spades_44430885_448.err  spades_44430885_580.out  spades_44430885_713.err
+spades_44430885_182.out  spades_44430885_315.err  spades_44430885_448.out  spades_44430885_581.err  spades_44430885_713.out
+spades_44430885_183.err  spades_44430885_315.out  spades_44430885_449.err  spades_44430885_581.out  spades_44430885_714.err
+spades_44430885_183.out  spades_44430885_316.err  spades_44430885_449.out  spades_44430885_582.err  spades_44430885_714.out
+spades_44430885_184.err  spades_44430885_316.out  spades_44430885_44.err   spades_44430885_582.out  spades_44430885_715.err
+spades_44430885_184.out  spades_44430885_317.err  spades_44430885_44.out   spades_44430885_583.err  spades_44430885_715.out
+spades_44430885_185.err  spades_44430885_317.out  spades_44430885_450.err  spades_44430885_583.out  spades_44430885_716.err
+spades_44430885_185.out  spades_44430885_318.err  spades_44430885_450.out  spades_44430885_584.err  spades_44430885_716.out
+spades_44430885_186.err  spades_44430885_318.out  spades_44430885_451.err  spades_44430885_584.out  spades_44430885_717.err
+spades_44430885_186.out  spades_44430885_319.err  spades_44430885_451.out  spades_44430885_585.err  spades_44430885_717.out
+spades_44430885_187.err  spades_44430885_319.out  spades_44430885_452.err  spades_44430885_585.out  spades_44430885_718.err
+spades_44430885_187.out  spades_44430885_31.err   spades_44430885_452.out  spades_44430885_586.err  spades_44430885_718.out
+spades_44430885_188.err  spades_44430885_31.out   spades_44430885_453.err  spades_44430885_586.out  spades_44430885_719.err
+spades_44430885_188.out  spades_44430885_320.err  spades_44430885_453.out  spades_44430885_587.err  spades_44430885_719.out
+spades_44430885_189.err  spades_44430885_320.out  spades_44430885_454.err  spades_44430885_587.out  spades_44430885_71.err
+spades_44430885_189.out  spades_44430885_321.err  spades_44430885_454.out  spades_44430885_588.err  spades_44430885_71.out
+spades_44430885_18.err   spades_44430885_321.out  spades_44430885_455.err  spades_44430885_588.out  spades_44430885_720.err
+spades_44430885_18.out   spades_44430885_322.err  spades_44430885_455.out  spades_44430885_589.err  spades_44430885_720.out
+spades_44430885_190.err  spades_44430885_322.out  spades_44430885_456.err  spades_44430885_589.out  spades_44430885_721.err
+spades_44430885_190.out  spades_44430885_323.err  spades_44430885_456.out  spades_44430885_58.err   spades_44430885_721.out
+spades_44430885_191.err  spades_44430885_323.out  spades_44430885_457.err  spades_44430885_58.out   spades_44430885_722.err
+spades_44430885_191.out  spades_44430885_324.err  spades_44430885_457.out  spades_44430885_590.err  spades_44430885_722.out
+spades_44430885_192.err  spades_44430885_324.out  spades_44430885_458.err  spades_44430885_590.out  spades_44430885_723.err
+spades_44430885_192.out  spades_44430885_325.err  spades_44430885_458.out  spades_44430885_591.err  spades_44430885_723.out
+spades_44430885_193.err  spades_44430885_325.out  spades_44430885_459.err  spades_44430885_591.out  spades_44430885_724.err
+spades_44430885_193.out  spades_44430885_326.err  spades_44430885_459.out  spades_44430885_592.err  spades_44430885_724.out
+spades_44430885_194.err  spades_44430885_326.out  spades_44430885_45.err   spades_44430885_592.out  spades_44430885_725.err
+spades_44430885_194.out  spades_44430885_327.err  spades_44430885_45.out   spades_44430885_593.err  spades_44430885_725.out
+spades_44430885_195.err  spades_44430885_327.out  spades_44430885_460.err  spades_44430885_593.out  spades_44430885_726.err
+spades_44430885_195.out  spades_44430885_328.err  spades_44430885_460.out  spades_44430885_594.err  spades_44430885_726.out
+spades_44430885_196.err  spades_44430885_328.out  spades_44430885_461.err  spades_44430885_594.out  spades_44430885_727.err
+spades_44430885_196.out  spades_44430885_329.err  spades_44430885_461.out  spades_44430885_595.err  spades_44430885_727.out
+spades_44430885_197.err  spades_44430885_329.out  spades_44430885_462.err  spades_44430885_595.out  spades_44430885_728.err
+spades_44430885_197.out  spades_44430885_32.err   spades_44430885_462.out  spades_44430885_596.err  spades_44430885_728.out
+spades_44430885_198.err  spades_44430885_32.out   spades_44430885_463.err  spades_44430885_596.out  spades_44430885_729.err
+spades_44430885_198.out  spades_44430885_330.err  spades_44430885_463.out  spades_44430885_597.err  spades_44430885_729.out
+spades_44430885_199.err  spades_44430885_330.out  spades_44430885_464.err  spades_44430885_597.out  spades_44430885_72.err
+spades_44430885_199.out  spades_44430885_331.err  spades_44430885_464.out  spades_44430885_598.err  spades_44430885_72.out
+spades_44430885_19.err   spades_44430885_331.out  spades_44430885_465.err  spades_44430885_598.out  spades_44430885_730.err
+spades_44430885_19.out   spades_44430885_332.err  spades_44430885_465.out  spades_44430885_599.err  spades_44430885_730.out
+spades_44430885_1.err    spades_44430885_332.out  spades_44430885_466.err  spades_44430885_599.out  spades_44430885_731.err
+spades_44430885_1.out    spades_44430885_333.err  spades_44430885_466.out  spades_44430885_59.err   spades_44430885_731.out
+spades_44430885_200.err  spades_44430885_333.out  spades_44430885_467.err  spades_44430885_59.out   spades_44430885_732.err
+spades_44430885_200.out  spades_44430885_334.err  spades_44430885_467.out  spades_44430885_5.err    spades_44430885_732.out
+spades_44430885_201.err  spades_44430885_334.out  spades_44430885_468.err  spades_44430885_5.out    spades_44430885_733.err
+spades_44430885_201.out  spades_44430885_335.err  spades_44430885_468.out  spades_44430885_600.err  spades_44430885_733.out
+spades_44430885_202.err  spades_44430885_335.out  spades_44430885_469.err  spades_44430885_600.out  spades_44430885_734.err
+spades_44430885_202.out  spades_44430885_336.err  spades_44430885_469.out  spades_44430885_601.err  spades_44430885_734.out
+spades_44430885_203.err  spades_44430885_336.out  spades_44430885_46.err   spades_44430885_601.out  spades_44430885_735.err
+spades_44430885_203.out  spades_44430885_337.err  spades_44430885_46.out   spades_44430885_602.err  spades_44430885_735.out
+spades_44430885_204.err  spades_44430885_337.out  spades_44430885_470.err  spades_44430885_602.out  spades_44430885_736.err
+spades_44430885_204.out  spades_44430885_338.err  spades_44430885_470.out  spades_44430885_603.err  spades_44430885_736.out
+spades_44430885_205.err  spades_44430885_338.out  spades_44430885_471.err  spades_44430885_603.out  spades_44430885_73.err
+spades_44430885_205.out  spades_44430885_339.err  spades_44430885_471.out  spades_44430885_604.err  spades_44430885_73.out
+spades_44430885_206.err  spades_44430885_339.out  spades_44430885_472.err  spades_44430885_604.out  spades_44430885_74.err
+spades_44430885_206.out  spades_44430885_33.err   spades_44430885_472.out  spades_44430885_605.err  spades_44430885_74.out
+spades_44430885_207.err  spades_44430885_33.out   spades_44430885_473.err  spades_44430885_605.out  spades_44430885_75.err
+spades_44430885_207.out  spades_44430885_340.err  spades_44430885_473.out  spades_44430885_606.err  spades_44430885_75.out
+spades_44430885_208.err  spades_44430885_340.out  spades_44430885_474.err  spades_44430885_606.out  spades_44430885_76.err
+spades_44430885_208.out  spades_44430885_341.err  spades_44430885_474.out  spades_44430885_607.err  spades_44430885_76.out
+spades_44430885_209.err  spades_44430885_341.out  spades_44430885_475.err  spades_44430885_607.out  spades_44430885_77.err
+spades_44430885_209.out  spades_44430885_342.err  spades_44430885_475.out  spades_44430885_608.err  spades_44430885_77.out
+spades_44430885_20.err   spades_44430885_342.out  spades_44430885_476.err  spades_44430885_608.out  spades_44430885_78.err
+spades_44430885_20.out   spades_44430885_343.err  spades_44430885_476.out  spades_44430885_609.err  spades_44430885_78.out
+spades_44430885_210.err  spades_44430885_343.out  spades_44430885_477.err  spades_44430885_609.out  spades_44430885_79.err
+spades_44430885_210.out  spades_44430885_344.err  spades_44430885_477.out  spades_44430885_60.err   spades_44430885_79.out
+spades_44430885_211.err  spades_44430885_344.out  spades_44430885_478.err  spades_44430885_60.out   spades_44430885_7.err
+spades_44430885_211.out  spades_44430885_345.err  spades_44430885_478.out  spades_44430885_610.err  spades_44430885_7.out
+spades_44430885_212.err  spades_44430885_345.out  spades_44430885_479.err  spades_44430885_610.out  spades_44430885_80.err
+spades_44430885_212.out  spades_44430885_346.err  spades_44430885_479.out  spades_44430885_611.err  spades_44430885_80.out
+spades_44430885_213.err  spades_44430885_346.out  spades_44430885_47.err   spades_44430885_611.out  spades_44430885_81.err
+spades_44430885_213.out  spades_44430885_347.err  spades_44430885_47.out   spades_44430885_612.err  spades_44430885_81.out
+spades_44430885_214.err  spades_44430885_347.out  spades_44430885_480.err  spades_44430885_612.out  spades_44430885_82.err
+spades_44430885_214.out  spades_44430885_348.err  spades_44430885_480.out  spades_44430885_613.err  spades_44430885_82.out
+spades_44430885_215.err  spades_44430885_348.out  spades_44430885_481.err  spades_44430885_613.out  spades_44430885_83.err
+spades_44430885_215.out  spades_44430885_349.err  spades_44430885_481.out  spades_44430885_614.err  spades_44430885_83.out
+spades_44430885_216.err  spades_44430885_349.out  spades_44430885_482.err  spades_44430885_614.out  spades_44430885_84.err
+spades_44430885_216.out  spades_44430885_34.err   spades_44430885_482.out  spades_44430885_615.err  spades_44430885_84.out
+spades_44430885_217.err  spades_44430885_34.out   spades_44430885_483.err  spades_44430885_615.out  spades_44430885_85.err
+spades_44430885_217.out  spades_44430885_350.err  spades_44430885_483.out  spades_44430885_616.err  spades_44430885_85.out
+spades_44430885_218.err  spades_44430885_350.out  spades_44430885_484.err  spades_44430885_616.out  spades_44430885_86.err
+spades_44430885_218.out  spades_44430885_351.err  spades_44430885_484.out  spades_44430885_617.err  spades_44430885_86.out
+spades_44430885_219.err  spades_44430885_351.out  spades_44430885_485.err  spades_44430885_617.out  spades_44430885_87.err
+spades_44430885_219.out  spades_44430885_352.err  spades_44430885_485.out  spades_44430885_618.err  spades_44430885_87.out
+spades_44430885_21.err   spades_44430885_352.out  spades_44430885_486.err  spades_44430885_618.out  spades_44430885_88.err
+spades_44430885_21.out   spades_44430885_353.err  spades_44430885_486.out  spades_44430885_619.err  spades_44430885_88.out
+spades_44430885_220.err  spades_44430885_353.out  spades_44430885_487.err  spades_44430885_619.out  spades_44430885_89.err
+spades_44430885_220.out  spades_44430885_354.err  spades_44430885_487.out  spades_44430885_61.err   spades_44430885_89.out
+spades_44430885_221.err  spades_44430885_354.out  spades_44430885_488.err  spades_44430885_61.out   spades_44430885_8.err
+spades_44430885_221.out  spades_44430885_355.err  spades_44430885_488.out  spades_44430885_620.err  spades_44430885_8.out
+spades_44430885_222.err  spades_44430885_355.out  spades_44430885_489.err  spades_44430885_620.out  spades_44430885_90.err
+spades_44430885_222.out  spades_44430885_356.err  spades_44430885_489.out  spades_44430885_621.err  spades_44430885_90.out
+spades_44430885_223.err  spades_44430885_356.out  spades_44430885_48.err   spades_44430885_621.out  spades_44430885_91.err
+spades_44430885_223.out  spades_44430885_357.err  spades_44430885_48.out   spades_44430885_622.err  spades_44430885_91.out
+spades_44430885_224.err  spades_44430885_357.out  spades_44430885_490.err  spades_44430885_622.out  spades_44430885_92.err
+spades_44430885_224.out  spades_44430885_358.err  spades_44430885_490.out  spades_44430885_623.err  spades_44430885_92.out
+spades_44430885_225.err  spades_44430885_358.out  spades_44430885_491.err  spades_44430885_623.out  spades_44430885_93.err
+spades_44430885_225.out  spades_44430885_359.err  spades_44430885_491.out  spades_44430885_624.err  spades_44430885_93.out
+spades_44430885_226.err  spades_44430885_359.out  spades_44430885_492.err  spades_44430885_624.out  spades_44430885_94.err
+spades_44430885_226.out  spades_44430885_35.err   spades_44430885_492.out  spades_44430885_625.err  spades_44430885_94.out
+spades_44430885_227.err  spades_44430885_35.out   spades_44430885_493.err  spades_44430885_625.out  spades_44430885_95.err
+spades_44430885_227.out  spades_44430885_360.err  spades_44430885_493.out  spades_44430885_626.err  spades_44430885_95.out
+spades_44430885_228.err  spades_44430885_360.out  spades_44430885_494.err  spades_44430885_626.out  spades_44430885_96.err
+spades_44430885_228.out  spades_44430885_361.err  spades_44430885_494.out  spades_44430885_627.err  spades_44430885_96.out
+spades_44430885_229.err  spades_44430885_361.out  spades_44430885_495.err  spades_44430885_627.out  spades_44430885_97.err
+spades_44430885_229.out  spades_44430885_362.err  spades_44430885_495.out  spades_44430885_628.err  spades_44430885_97.out
+spades_44430885_22.err   spades_44430885_362.out  spades_44430885_496.err  spades_44430885_628.out  spades_44430885_98.err
+spades_44430885_22.out   spades_44430885_363.err  spades_44430885_496.out  spades_44430885_629.err  spades_44430885_98.out
+spades_44430885_230.err  spades_44430885_363.out  spades_44430885_497.err  spades_44430885_629.out  spades_44430885_99.err
+spades_44430885_230.out  spades_44430885_364.err  spades_44430885_497.out  spades_44430885_62.err   spades_44430885_99.out
+spades_44430885_231.err  spades_44430885_364.out  spades_44430885_498.err  spades_44430885_62.out   spades_44430885_9.err
+spades_44430885_231.out  spades_44430885_365.err  spades_44430885_498.out  spades_44430885_630.err  spades_44430885_9.out
+spades_44430885_232.err  spades_44430885_365.out  spades_44430885_499.err  spades_44430885_630.out
+spades_44430885_232.out  spades_44430885_366.err  spades_44430885_499.out  spades_44430885_631.err
+spades_44430885_233.err  spades_44430885_366.out  spades_44430885_49.err   spades_44430885_631.out
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ sed -n '1,200p' /g/typas/Personal_Folders/Neeka/Model/data/10_whole_pipeline/ERP105624/raw_reads/logs/spades_444330885_1.err
+/var/spool/slurm/job44430886/slurm_script: line 27: spades.py: command not found
+]0;haack@login2:/g/typas/Personal_Folders/Neeka/Model/scripts[haack@login2 scripts]$ rm -r /g/typas/Personal_Folders/Neeka/Model/data/10_whole_pipeline/ERP105624/raw_reads/logs
+]0;haack@login2:/g/typas/Person

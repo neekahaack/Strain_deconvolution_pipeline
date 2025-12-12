@@ -1,0 +1,88 @@
+#Game Plan
+#make next flow to run everything together
+#1.get fasta file from those numbers
+#2. classify taxonomically
+#3. annotate genome
+#4. extract 16s genes
+#5. Align 16s sequences to eachother
+    #1. Install alignment software. Make a new conda/mamba/ whatever environment and install mafft: conda install bioconda::mafft
+        #micromamba create -n mafft_env -c conda-forge -c bioconda mafft
+    #2. ⁠Put all 16S sequences into one big fasta file (if not already) an run mafft. Make sure to google which options to use if you have > 1000 sequences
+        #cat *.ffn* > newfile.txt 
+    #actually, before step 2: Have a look at the length distribution of 16S sequences and throw out outliers (you expect the 16S gene to be around 1500 basepairs)
+        #i think this should be something i plot
+    #3. Compute pairwise identity values between aligned sequences. In other words, compute how many mismatches there are between them
+    #4 compute pairwise identity of sequences
+    #this is mathematical, make matrix to compare each sequence to each sequence
+    #load taxonomy file, group by species, pipe into tally() to count how many per species, before and after filtering for 16S length (try kicking out over 1550), then scatter the counts
+    #this is scatterplot before and after
+#6 with pairwise identity matrix, can check:
+    #if theres intragenera grouping
+#7 instead, we want to try first do alignment on groups of sequences that are in the same genus first, then do the analysis of alignment
+    #right now i am editing alignment file, that is 05_01 file
+
+#new pivot
+#simulate reads from a set of bacterial genomes (Take the genomes from the gut isolate collection(s) you assembled as baseline)
+#Download (some of) the raw sequencing data from these isolates and compare the characteristics of the simulated reads with the real ones
+#Once we have convinced ourselves that the read simulator is doing a good job, simulate reads at various expected genome coverages, run sameStr
+#need a bam file 
+
+#step 1. take a few genomes from gut isolate collection, 5 or 10 from different species
+#2. go n NCBI, download fast q files of raw sequencing output
+#simulate reads of assembled sequence and compare.
+
+#histogram of number of contigs for contigs file for each assembly
+
+#conversation from nic didnt save yesterday fmllll
+# trying to recall:
+#we had said to look at histogram of assembly distinctly for each species, done
+#then we had said for simulation and raw we would align them back to the assembly and examine them. bowtie2 utilizes fastQ files. have those already
+#also we said we would make a bam file from the .aln files (WRONG). actually ended up making bam file from samfile output from bowtie, used samtools
+#in some way use fastQC, those were used first in bowtie2 alignment
+
+#so we can do bowtie2 alignment of .fq files for raw and simulated reads. 
+
+#then do something with bam files
+
+#samestr
+    #After shotgun metagenomic sequencing, raw reads (FASTQ) are aligned to marker‐gene reference sequences (e.g., from MetaPhlAn or mOTUs) to generate alignments. 
+    #The output of the alignments (e.g., in SAM/BAM format) is then processed by SameStr to extract SNV (single nucleotide variant) profiles per marker. These variant tables are compared across samples.
+    #The final formats for SameStr include numpy arrays (“.npy” or other numpy‐format tables) that summarise SNV profiles and strain sharing.
+
+    #probvlem is rn that I have whole genome alignment and no info about marker genes
+    #you can’t use those BAMs directly with SameStr (unless by luck they were aligned to the marker reference already). You’ll need reads aligned specifically to the MetaPhlAn/mOTUs marker database.
+    #SameStr’s workflow is:
+    #WGS reads → align to marker genes (MetaPhlAn or mOTUs) → call SNVs on those markers → compare SNV profiles between samples.
+    #since i have fasta files:
+    #fastq → (optional: QC + host removal) → bowtie2 to MetaPhlAn/mOTUs marker DB → BAM → SameStr
+
+#with my 10 species isolates
+#What your current 10-species test is
+#A valid negative control that answers:
+#Can SameStr run on your inputs?
+#Does it avoid reporting strains where there are no shared species?
+#Are the marker profiles being generated correctly?
+#Do any weird false positives appear across species? (They shouldn’t.)
+#This is good for pipeline troubleshooting, not benchmarking biological accuracy.
+
+# Next steps (what you should do next)
+# To truly evaluate SameStr’s ability to call shared strains:
+# 1. Test “same isolate sequenced twice” (positive control)
+# You need at least one species where you have two sequencing runs of the same strain.
+# Expected: very high similarity and “same strain” detected.
+# 2. Test two strains of the same species (negative control within species)
+# Example: two E. coli isolates.
+# Expected: low similarity, “different strain.”
+# 3. Create simple synthetic mixtures
+# You can artificially mix reads:
+# cat isolate1.fastq isolate2.fastq > mixed.fastq
+# or mix in specific proportions.
+# This gives you known strain-sharing patterns.
+# 4. Move to “real-world benchmarking”
+# Once the basic controls work, then:
+# Use dozens/hundreds of metagenomic samples
+# Look for strain sharing within hosts (longitudinal)
+# Compare across unrelated hosts (should have no sharing)
+# Compare household/paired samples (moderate sharing expected)
+
+#what is SNV calling?
